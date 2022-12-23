@@ -64,24 +64,17 @@ export class MainComponent implements OnInit {
     chooseCell(cellsMultiArray: CellInterface[][], cellsRowIndex: number, cellIndex: number, cellsRow: CellInterface[]) {
         let prevRow = cellsMultiArray[cellsRowIndex - 1]
         let nextRow = cellsMultiArray[cellsRowIndex + 1]
+        let possibleRowsWithHoles = [prevRow, cellsRow, nextRow]
 
         cellsRow[cellIndex].isClicked = true
 
-        for (let i = cellIndex - 1; i < cellIndex + 2; i++) {
-            if (prevRow != undefined && prevRow[i] && prevRow[i].hole ) {
-                cellsRow[cellIndex].holesNearCell++
-            }
-        }
+        possibleRowsWithHoles.forEach((arr) => this.countHoles(arr, cellsRow, cellIndex) )
+    }
 
+    countHoles(cellsRow: CellInterface[], currentRow: CellInterface[], cellIndex: number) {
         for (let i = cellIndex - 1; i < cellIndex + 2; i++) {
             if (cellsRow != undefined && cellsRow[i] && cellsRow[i].hole ) {
-                cellsRow[cellIndex].holesNearCell++
-            }
-        }
-
-        for (let i = cellIndex - 1; i < cellIndex + 2; i++) {
-            if (nextRow != undefined && nextRow[i] && nextRow[i].hole ) {
-                cellsRow[cellIndex].holesNearCell++
+                currentRow[cellIndex].holesNearCell++
             }
         }
     }
