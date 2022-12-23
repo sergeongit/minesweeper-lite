@@ -1,0 +1,16 @@
+<section class="main-container">
+    <div class="cells-box">
+        <div class="cells-row" *ngFor="let cellsRow of cellsMultiArray; let cellsRowIndex = index">
+            <button [disabled]="cell.isClicked" class="cell"
+                    *ngFor="let cell of cellsRow; let cellIndex = index"
+                    [class.-visible-value]="cell.isClicked"
+                    (click)="chooseCell(cellsMultiArray, cellsRowIndex, cellIndex, cellsRow)"
+            >
+                <ng-container [ngSwitch]="cell.hole">
+                    <span *ngSwitchCase="true" class="cell-name -hole">H</span>
+                    <span *ngSwitchCase="false" class="cell-name">{{ cell.holesNearCell }}</span>
+                </ng-container>
+            </button>
+        </div>
+    </div>
+</section>

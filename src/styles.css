@@ -1,0 +1,37 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    background: #3c3c3e;
+}
+
+/*__________GLOBAL STYLES_____*/
+
+.button {
+    padding: 10px 12px;
+    outline: none;
+    color: #FFFFFF;
+    border: 2px solid #000000;
+    cursor: pointer;
+}
+
+.button:active {
+    transition: 0.2s;
+    transform: scale(0.9);
+}
+
+span {
+    padding-left: 12px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+}

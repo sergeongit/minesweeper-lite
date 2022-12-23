@@ -1,0 +1,80 @@
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 114px);
+}
+
+.cells-box {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.cells-row {
+    display: flex;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: gray;
+    opacity: 0.9;
+    color: #44e444;
+    font-size: 36px;
+    line-height: 1;
+    border: 4px solid #000000;
+    user-select: none;
+    cursor: pointer;
+}
+
+.cell:hover {
+    transition: 0.2s;
+    opacity: 1;
+}
+
+.cell.-visible-value .cell-name {
+    transition: 0.3s;
+    opacity: 1;
+}
+
+.cell-name {
+    font-size: 32px;
+    line-height: 1;
+    opacity: 0;
+}
+
+.cell-name.-hole {
+    color: #000000;
+}
+
+
+/*_______________________________*/
+/*_________Media queries_________*/
+
+@media all and (max-width: 1920px) {
+    .tile {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tile-name {
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width: 1920px) and (min-resolution: 1.5dppx) {
+    .tile {
+        width: 48px;
+        height: 48px;
+    }
+
+    .tile-name {
+        font-size: 16px;
+    }
+}
